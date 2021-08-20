@@ -28,9 +28,9 @@ def consulting_aws(cnpjs):
             sleep(20)
         else:
             if not json.loads((response.text))['qsa']: # if there's no info in the 'qsa' key
-                aux = [json.loads((response.text))['cnpj'],json.loads((response.text))['nome'],json.loads((response.text))['fantasia'],json.loads((response.text))['situacao'], json.loads((response.text))['abertura'],json.loads((response.text))['email'], json.loads((response.text))['logradouro'], json.loads((response.text))['numero'],json.loads((response.text))['complemento'], json.loads((response.text))['bairro'], json.loads((response.text))['municipio'],json.loads((response.text))['cep'], json.loads((response.text))['atividade_principal'][0]['text'],json.loads((response.text))['atividade_principal'][0]['code'], json.loads((response.text))['qsa']]        
+                aux = [json.loads((response.text))['cnpj'],json.loads((response.text))['nome'],json.loads((response.text))['fantasia'],json.loads((response.text))['situacao'], json.loads((response.text))['abertura'],json.loads((response.text))['email'],json.loads((response.text))['telefone'], json.loads((response.text))['logradouro'], json.loads((response.text))['numero'],json.loads((response.text))['complemento'], json.loads((response.text))['bairro'], json.loads((response.text))['municipio'],json.loads((response.text))['cep'],json.loads((response.text))['uf'], json.loads((response.text))['atividade_principal'][0]['text'],json.loads((response.text))['atividade_principal'][0]['code'], json.loads((response.text))['qsa']]        
             else:
-                aux = [json.loads((response.text))['cnpj'],json.loads((response.text))['nome'],json.loads((response.text))['fantasia'],json.loads((response.text))['situacao'], json.loads((response.text))['abertura'],json.loads((response.text))['email'], json.loads((response.text))['logradouro'], json.loads((response.text))['numero'],json.loads((response.text))['complemento'], json.loads((response.text))['bairro'], json.loads((response.text))['municipio'],json.loads((response.text))['cep'], json.loads((response.text))['atividade_principal'][0]['text'],json.loads((response.text))['atividade_principal'][0]['code'], json.loads((response.text))['qsa'][0]['qual'], json.loads((response.text))['qsa'][0]['nome']]
+                aux = [json.loads((response.text))['cnpj'],json.loads((response.text))['nome'],json.loads((response.text))['fantasia'],json.loads((response.text))['situacao'], json.loads((response.text))['abertura'],json.loads((response.text))['email'],json.loads((response.text))['telefone'], json.loads((response.text))['logradouro'], json.loads((response.text))['numero'],json.loads((response.text))['complemento'], json.loads((response.text))['bairro'], json.loads((response.text))['municipio'],json.loads((response.text))['cep'],json.loads((response.text))['uf'], json.loads((response.text))['atividade_principal'][0]['text'],json.loads((response.text))['atividade_principal'][0]['code'], json.loads((response.text))['qsa'][0]['qual'], json.loads((response.text))['qsa'][0]['nome']]
             responses.append(aux) # append the response
             sleep(20) # sleep for 20 seconds, because we can only make 3 requests each minute
 
@@ -38,7 +38,7 @@ def consulting_aws(cnpjs):
 
 def dataframe_the_response(responses): 
     df = pd.DataFrame(responses) # creates a df
-    df.rename(columns={0:'CNPJ',1:'Nome',2:'Nome Fantasia', 3:'Situação', 4:'Data de Abertura', 5:'Email', 6:'Logradouro', 7:'Número', 8:'Complemento', 9:'Bairro', 10:'Municipio', 11:'CEP', 12:'Atividade Principal', 13:'CNAE', 14:'QSA', 15:'Nome Sócio'}, inplace=True) # rename the columns
+    df.rename(columns={0:'CNPJ', 1:'Nome', 2:'Fantasia', 3:'Situação', 4:'Data de Abertura', 5:'Email', 6:'Telefone', 7:'Logradouro', 8:'Número', 9:'Complemento', 10:'Bairro', 11:'Município', 12:'CEP', 13:'UF', 14:'Atividade Principal', 15:'CNAE', 16:'QSA', 17:'Nome Sócio'}, inplace=True) # rename the columns
     df.to_excel('resultado_consulta_receita.xlsx') # save it as an excel file
 
 def main():
