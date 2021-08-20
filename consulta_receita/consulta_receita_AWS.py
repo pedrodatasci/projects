@@ -31,8 +31,8 @@ def consulting_aws(cnpjs):
                 aux = [json.loads((response.text))['cnpj'],json.loads((response.text))['nome'],json.loads((response.text))['fantasia'],json.loads((response.text))['situacao'], json.loads((response.text))['abertura'],json.loads((response.text))['email'], json.loads((response.text))['logradouro'], json.loads((response.text))['numero'],json.loads((response.text))['complemento'], json.loads((response.text))['bairro'], json.loads((response.text))['municipio'],json.loads((response.text))['cep'], json.loads((response.text))['atividade_principal'][0]['text'],json.loads((response.text))['atividade_principal'][0]['code'], json.loads((response.text))['qsa']]        
             else:
                 aux = [json.loads((response.text))['cnpj'],json.loads((response.text))['nome'],json.loads((response.text))['fantasia'],json.loads((response.text))['situacao'], json.loads((response.text))['abertura'],json.loads((response.text))['email'], json.loads((response.text))['logradouro'], json.loads((response.text))['numero'],json.loads((response.text))['complemento'], json.loads((response.text))['bairro'], json.loads((response.text))['municipio'],json.loads((response.text))['cep'], json.loads((response.text))['atividade_principal'][0]['text'],json.loads((response.text))['atividade_principal'][0]['code'], json.loads((response.text))['qsa'][0]['qual'], json.loads((response.text))['qsa'][0]['nome']]
-        responses.append(aux) # append the response
-        sleep(20) # sleep for 20 seconds, because we can only make 3 requests each minute
+            responses.append(aux) # append the response
+            sleep(20) # sleep for 20 seconds, because we can only make 3 requests each minute
 
     return dataframe_the_response(responses) # return the dataframe function with those responses as parameters
 
