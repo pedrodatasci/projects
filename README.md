@@ -1,6 +1,6 @@
-# DDL Maker
+# Name of the Project
 
-A simple Python code to make it easier to create DDL's. This project serves as a training to Git as well.
+Brief description
 
 ## Table of contents
 * [Introduction](#introduction)
@@ -10,41 +10,37 @@ A simple Python code to make it easier to create DDL's. This project serves as a
 
 ## Introduction
 
-This is a simple code to create DDL's using the field list used in object ingestion. Instead of rewriting everything from the \_config.yml file, all you have to do is copy it and paste it as is, (e.g., "field1", "field2", "field3") and this script will do the rest. Given the variety of different properties a table can have the scope of this script is very limited, at least for now. I'm aiming to make it more dynamic and even able to create the tables themselves instead of only generating the DDL for them.
+Pretty much self\_explanatory
 
 ## Features
 
-- Easily create DDL's
-* Reuses what is already written
-+ Yes I'm just testing out some Markdown things here
+- there are
+* 3 ways
++ To create unumbered list
 
 ## Status
 
-- Base code already working
-- Can already be used to create some basic DDL's
+- What is ready?
 
 **To Do:**
 
-- Implement more DDL options
-- Make the script capable of creating the tables
-- A graphical interface just because
+- What are you aiming to do next?
 
 
 ## Example
 
-**Example of an input:**
+**Use this to make the text bold btw:**
 
-<>![Input example](./images/input_example.png)
-
-___________________________________
-
-**Generated DDL from the input:**
-<>![DDL Output Example](./images/DDL_example.png)
+<>![This is how you can use images](./images/input_example.png)
 
 ___________________________________
 
+<>![Yes, you need them in your repository](./images/DDL_example.png)
 
-**Generated query to transfer data from external to internal table:**
-<>![Generated Query Example](./images/query_example.png)
+___________________________________
+
+
+**More text:**
+<>![You call them using their path](./images/query_example.png)
 
 ___________________________________
