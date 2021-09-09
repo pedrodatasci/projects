@@ -3,6 +3,10 @@ import os
 from time import time
 
 try:
+    import openpyxl
+except:
+    os.system('''python -m pip install openpyxl''')
+try:
     import pandas as pd
 except:
     os.system('''python -m pip install pandas''')
